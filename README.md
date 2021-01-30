@@ -78,7 +78,7 @@ Users can interact with Movie Manager using a set of RESTful service endpoints o
 
 
 # Class Diagram
-![RecipeAppClassDiagram](https://github.com/serhanmd/EndAppDev-FinalProject/blob/master/ClassDiagram.png)
+![RecipeAppClassDiagram](https://github.com/serhanmd/Movie-Manager/blob/main/MovieClassDiagramImage.png)
 
 
 
