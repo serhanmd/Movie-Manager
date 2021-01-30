@@ -13,8 +13,8 @@ Movie Manager allows movie connoisseurs to keep track of movies they watched and
 Users can interact with Movie Manager using a set of RESTful service endpoints or a simple but organized UI.
 
 # Storyboard - NOT DONE
-![RecipeUIImg](https://user-images.githubusercontent.com/70541399/94591720-70edae80-0256-11eb-97e6-c9bbe85c6b2a.png)
-[Link to full mock up](https://www.fluidui.com/editor/live/preview/cF9JdER0azZvRlg1ZEVwbXhRNlpRZ0VESWNiRjRnT1gwUA==)
+![RecipeUIImg]()
+[Link to full mock up]()
 
 
 
