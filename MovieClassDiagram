@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2021-01-30T17:46:06.017Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36 OPR/73.0.3856.344" etag="vOyBf9kU033YNSIWeLxe" version="14.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-30T17:53:52.944Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36 OPR/73.0.3856.344" etag="lxW5va17j_0OCbJRYeKP" version="14.2.9" type="github">
   <diagram id="lWXNbmLge62VUV2JYMKO" name="Page-1">
     <mxGraphModel dx="1382" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-12" value="UI" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;" parent="1" vertex="1">
-          <mxGeometry x="600" y="40" width="470" height="320" as="geometry" />
+          <mxGeometry x="600" y="40" width="440" height="320" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-9" value="Business Logic" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;" parent="1" vertex="1">
           <mxGeometry x="10" y="28" width="560" height="710" as="geometry" />
@@ -13,13 +13,13 @@
         <mxCell id="a9MwZO1zOmP9spwCdnWn-1" value="Movie" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
           <mxGeometry x="20" y="80" width="160" height="510" as="geometry" />
         </mxCell>
-        <mxCell id="a9MwZO1zOmP9spwCdnWn-2" value="id (int)&#xa;name (string)&#xa;description (string)&#xa;author (string)&#xa;datePublished (date)&#xa;prepTime (double)&#xa;cookTime (double)&#xa;recipeServings (double)&#xa;recipeIngredient (array list)&#xa;recipeInstructions (array list)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="a9MwZO1zOmP9spwCdnWn-1" vertex="1">
+        <mxCell id="a9MwZO1zOmP9spwCdnWn-2" value="title (string)&#xa;year (int)&#xa;rated (string)&#xa;runtime (int)&#xa;director (string)&#xa;imbdbRating (double)&#xa;userRating (double)&#xa;genre (array of string)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="a9MwZO1zOmP9spwCdnWn-1" vertex="1">
           <mxGeometry y="26" width="160" height="164" as="geometry" />
         </mxCell>
         <mxCell id="a9MwZO1zOmP9spwCdnWn-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="a9MwZO1zOmP9spwCdnWn-1" vertex="1">
           <mxGeometry y="190" width="160" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="a9MwZO1zOmP9spwCdnWn-4" value="getID()&#xa;setID()&#xa;getName()&#xa;setName()&#xa;getDescription()&#xa;setDescrioption()&#xa;getauthor()&#xa;setauthor()&#xa;getDatePublished()&#xa;setDatePublished()&#xa;getPrepTime()&#xa;setPrepTime()&#xa;getCookTime()&#xa;setCookTime()&#xa;getRecipeServings()&#xa;setRecipeServings()&#xa;getRecipeIngredient()&#xa;setRecipeIngredient()&#xa;getRecipeInstructions()&#xa;setRecipeInstructions()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="a9MwZO1zOmP9spwCdnWn-1" vertex="1">
+        <mxCell id="a9MwZO1zOmP9spwCdnWn-4" value="getTitle()&#xa;setTitle()&#xa;getYear()&#xa;setYear()&#xa;getRated()&#xa;setRated()&#xa;getRunTime()&#xa;setRunTime()&#xa;getDirector()&#xa;setDirector()&#xa;getIMDB()&#xa;setIMDB()&#xa;getUserRating()&#xa;setUserRating()&#xa;getGenre()&#xa;setGenre()&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="a9MwZO1zOmP9spwCdnWn-1" vertex="1">
           <mxGeometry y="210" width="160" height="300" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="M6GUXY2r6FMFCKeiw5oZ-8" target="M6GUXY2r6FMFCKeiw5oZ-18" edge="1">
@@ -43,45 +43,36 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-19" value="AddAMovie" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="720" y="230" width="140" height="52" as="geometry" />
+          <mxGeometry x="710" y="229" width="140" height="52" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-17" value="MyRecipeScreen" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="900" y="270" width="140" height="52" as="geometry" />
+          <mxGeometry x="890" y="270" width="140" height="52" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-13" value="Controller" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="920" y="70" width="140" height="52" as="geometry" />
+          <mxGeometry x="890" y="70" width="140" height="52" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-18" value="Login" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
           <mxGeometry x="670" y="70" width="140" height="52" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-34" value="Database" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;" parent="1" vertex="1">
-          <mxGeometry x="600" y="520" width="580" height="290" as="geometry" />
+          <mxGeometry x="600" y="448" width="440" height="290" as="geometry" />
         </mxCell>
-        <mxCell id="M6GUXY2r6FMFCKeiw5oZ-35" value="Recipes" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="620" y="550" width="160" height="188" as="geometry" />
+        <mxCell id="M6GUXY2r6FMFCKeiw5oZ-35" value="Movies" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="620" y="478" width="160" height="188" as="geometry" />
         </mxCell>
-        <mxCell id="M6GUXY2r6FMFCKeiw5oZ-36" value="id (int)&#xa;name (string)&#xa;description (string)&#xa;author (string)&#xa;datePublished (date)&#xa;prepTime (double)&#xa;cookTime (double)&#xa;recipeServings (double)&#xa;recipeIngredient (array list)&#xa;recipeInstructions (array list)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="M6GUXY2r6FMFCKeiw5oZ-35" vertex="1">
+        <mxCell id="M6GUXY2r6FMFCKeiw5oZ-36" value="title (string)&#xa;year (int)&#xa;rated (string)&#xa;runtime (int)&#xa;director (string)&#xa;imbdbRating (double)&#xa;userRating (double)&#xa;genre (array of string)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="M6GUXY2r6FMFCKeiw5oZ-35" vertex="1">
           <mxGeometry y="26" width="160" height="154" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-37" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="M6GUXY2r6FMFCKeiw5oZ-35" vertex="1">
           <mxGeometry y="180" width="160" height="8" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-43" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="810" y="550" width="160" height="108" as="geometry" />
+          <mxGeometry x="810" y="478" width="160" height="108" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-44" value="id (int)&#xa;username (string)&#xa;password&#xa;profileName (string)&#xa;email (string)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="M6GUXY2r6FMFCKeiw5oZ-43" vertex="1">
           <mxGeometry y="26" width="160" height="74" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-45" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="M6GUXY2r6FMFCKeiw5oZ-43" vertex="1">
-          <mxGeometry y="100" width="160" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="M6GUXY2r6FMFCKeiw5oZ-39" value="Ingredients" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="1010" y="550" width="160" height="108" as="geometry" />
-        </mxCell>
-        <mxCell id="M6GUXY2r6FMFCKeiw5oZ-40" value="id (int)&#xa;name (string)&#xa;quantity (double)&#xa;unit (string)&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="M6GUXY2r6FMFCKeiw5oZ-39" vertex="1">
-          <mxGeometry y="26" width="160" height="74" as="geometry" />
-        </mxCell>
-        <mxCell id="M6GUXY2r6FMFCKeiw5oZ-41" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="M6GUXY2r6FMFCKeiw5oZ-39" vertex="1">
           <mxGeometry y="100" width="160" height="8" as="geometry" />
         </mxCell>
         <mxCell id="M6GUXY2r6FMFCKeiw5oZ-26" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
@@ -103,7 +94,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="D9geKBO9hEqycoCpd5Mo-5" value="DeleteAMovie" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="720" y="300" width="140" height="52" as="geometry" />
+          <mxGeometry x="710" y="300" width="140" height="52" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
