@@ -13,7 +13,7 @@ Movie Manager allows movie connoisseurs to keep track of movies they watched and
 Users can interact with Movie Manager using a set of RESTful service endpoints or a simple but organized UI.
 
 # Storyboard - NOT DONE
-![RecipeUIImg]()
+![MovieUIImg]()
 [Link to full mock up]()
 
 
