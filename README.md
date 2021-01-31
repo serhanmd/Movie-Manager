@@ -47,7 +47,7 @@ Users can interact with Movie Manager using a set of RESTful service endpoints o
 > **Then:** The entry will not be saved and throw an error saying at least the movie title must be included.
 
 
-### As a movie watcher, I want to modify or delete movies, so that I can change or remove my movies from the list.
+### As a movie watcher, I want to delete movies, so that I can remove movies from my list.
 
 > **Given:** User has a saved movie entry called Tenet with information for director and genre<br />
 > **When:** The user/service navigates to Tenet<br />
