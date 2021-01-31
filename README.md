@@ -12,9 +12,9 @@ Movie Manager allows movie connoisseurs to keep track of movies they watched and
 
 Users can interact with Movie Manager using a set of RESTful service endpoints or a simple but organized UI.
 
-# Storyboard - NOT DONE
-![MovieUIImg]()
-[Link to full mock up]()
+# Storyboard
+![MovieUIImg](https://github.com/serhanmd/Movie-Manager/blob/main/MovieManagerMock.png)
+[Link to full mock up](https://www.fluidui.com/editor/live/project/p_ItDtk6oFX5dEpmxQ6ZQgEDIcbF4gOX0P#x_0fVU1OaBOfrGmMDL8bRqaDVe6z6LfR29)
 
 
 
@@ -116,4 +116,4 @@ They are found in the projects tab on GitHub and represent the project backlog.
 
 # Weekly Standup
 
-[Tuesday | 4:00PM](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTVjNTAyYmItNTIzMy00NWRkLTliYjQtNzU0OGNmYzVjOTE4%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%2268fd18b3-3b5f-45d9-aad4-9af00e39f78e%22%7d)
+[Tuesday | 5:00PM](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTVjNTAyYmItNTIzMy00NWRkLTliYjQtNzU0OGNmYzVjOTE4%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%2268fd18b3-3b5f-45d9-aad4-9af00e39f78e%22%7d)
