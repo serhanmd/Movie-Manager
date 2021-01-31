@@ -49,14 +49,6 @@ Users can interact with Movie Manager using a set of RESTful service endpoints o
 
 ### As a movie watcher, I want to modify or delete movies, so that I can change or remove my movies from the list.
 
-> **Given:** User has a saved movie entry called Tenet with no information for director or genre<br />
-> **When:** The user/service navigates to Tenet<br />
-> **When:** The user/service edits Tenet<br />
-> **Given:** Director name is Christopher Nolan<br />
-> **Given:** Genre is action-thriller<br />
-> **When:** The user/service saves their modications for Tenet<br />
-> **Then:** The movie entry Tenet will be updated to now contain information about director and genre.
-
 > **Given:** User has a saved movie entry called Tenet with information for director and genre<br />
 > **When:** The user/service navigates to Tenet<br />
 > **When:** The user/service edits Tenet<br />
