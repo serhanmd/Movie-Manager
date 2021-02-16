@@ -4,9 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListAdapter
 import android.widget.ListView
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
 
 class MainActivity : AppCompatActivity() {
     private val name = arrayOf("Avatar", "Joker", "Spiderman", "Thor", "Avengers", "Pokemon", "Iron Man", "The Boondock Saints", "Training Day", "Smurfs")
+    private lateinit var firestore : FirebaseFirestore
+
+    init {
+        firestore = FirebaseFirestore.getInstance()
+        firestore.firestoreSettings = FirebaseFirestoreSettings.Builder().build()
+    }
 
     private val image = arrayOf(R.drawable.avatar, R.drawable.joker, R.drawable.spiderman, R.drawable.thor, R.drawable.avengers, R.drawable.pokemon, R.drawable.ironman, R.drawable.boondocksaints,
             R.drawable.trainingday, R.drawable.smurfs)

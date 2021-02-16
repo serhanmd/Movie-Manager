@@ -5,6 +5,8 @@ import androidx.room.Dao
 @Dao
 interface MovieDAO {
 
-    fun getMovies()
+    fun getAllMovies()
+    fun getMovieById()
+    fun getMovieByTitle()
 
 }
