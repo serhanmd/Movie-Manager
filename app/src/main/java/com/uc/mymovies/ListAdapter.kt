@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.squareup.picasso.Picasso
+import com.uc.mymovies.dto.Movie
 
-class ListAdapter(private val context: Context, var image: Array<Int>, var name: Array<String>, var isFavorite: Array<Boolean>):BaseAdapter() {
+class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view: View? = convertView
@@ -28,17 +30,18 @@ class ListAdapter(private val context: Context, var image: Array<Int>, var name:
             viewHolder = view.tag as ViewHolder
         }
 
-        viewHolder.name?.text = name[position]
-        viewHolder.image?.setImageResource(image[position])
+        viewHolder.name?.text = movies[position].title;
+        var imageURL = movies[position].image;
+        Picasso.get().load(imageURL).into(viewHolder.image);
 
         //Check if user has movie as favorite, if so set image. (Rows are reused, must reset image).
-        checkIfFavorite(viewHolder, position)
+        checkIfFavorite(viewHolder, position);
 
         //Set click listener. If user favorites change image
         viewHolder.favoriteImage?.setOnClickListener {
-            isFavorite[position] = !isFavorite[position]
+            movies[position].isFavorite = !movies[position].isFavorite;
 
-            checkIfFavorite(viewHolder, position)
+            checkIfFavorite(viewHolder, position);
         }
 
         return view
@@ -53,11 +56,11 @@ class ListAdapter(private val context: Context, var image: Array<Int>, var name:
     }
 
     override fun getCount(): Int {
-        return image.size
+        return movies.size
     }
 
     fun checkIfFavorite(viewHolder: ViewHolder, position: Int) {
-        if (isFavorite[position]) {
+        if (movies[position].isFavorite) {
             viewHolder.favoriteImage?.setImageResource(R.drawable.favorite)
         } else {
             viewHolder.favoriteImage?.setImageResource(R.drawable.notfavorite)
