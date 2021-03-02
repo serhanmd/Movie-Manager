@@ -1,5 +1,7 @@
 package com.uc.mymovies
 
+import com.uc.mymovies.dto.Movie
+import com.uc.mymovies.service.MovieService
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -13,6 +15,12 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun canRetrieveFromFirebase() {
+        var movieService: MovieService = MovieService()
+        movieService.fetchUserMovies("connorkeith")
     }
 
 }
