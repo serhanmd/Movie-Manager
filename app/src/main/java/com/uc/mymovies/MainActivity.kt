@@ -62,9 +62,9 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
 
-            override fun afterTextChanged(s: Editable?) {
-                if (s?.isNotEmpty() == true) {
-                    var filteredQuery = testMovieData.filter { movie -> movie.title.toLowerCase().contains(s) };
+            override fun afterTextChanged(searchTxt: Editable?) {
+                if (searchTxt?.isNotEmpty() == true) {
+                    var filteredQuery = testMovieData.filter { movie -> movie.title.toLowerCase().contains(searchTxt) };
                     findViewById<ListView>(R.id.list_view).adapter = ListAdapter(main_activity,
                         filteredQuery as ArrayList<Movie>
                     );
