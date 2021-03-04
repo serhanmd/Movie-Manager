@@ -73,8 +73,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        searchFilter.onFocusChangeListener = View.OnFocusChangeListener { view, b ->
-            if (!b)
+        searchFilter.onFocusChangeListener = View.OnFocusChangeListener { view, hasFocus ->
+            if (!hasFocus)
                 hideSoftKeyboard(searchFilter);
         }
 
