@@ -30,17 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        testMovieData.add(Movie("Avatar", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Avatar-Teaser-Poster.jpg/220px-Avatar-Teaser-Poster.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Joker", "Fantasy", "Jack Black", "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Spiderman", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/f/f9/Spider-Man_Homecoming_poster.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Thor", "Fantasy", "Jack Black", "https://images-na.ssl-images-amazon.com/images/I/91P1wWqX63L._SL1500_.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Avengers", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Pokemon", "Fantasy", "Jack Black", "https://m.media-amazon.com/images/M/MV5BN2NkZjA0OWUtZDgyMy00MjIxLWJhZTEtYjdmYzVjZTQ3YWRiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_UY1200_CR85,0,630,1200_AL_.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Iron Man", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/0/00/Iron_Man_poster.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("The Boondock Saints", "Fantasy", "Jack Black", "https://m.media-amazon.com/images/M/MV5BYzVmMTdjOTYtOTJkYS00ZTg2LWExNTgtNzA1N2Y0MDgwYWFhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Training Day", "Fantasy", "Jack Black", "https://images-na.ssl-images-amazon.com/images/I/91EbJZH9JWL._SL1500_.jpg", "A movie about a blue person."))
-        testMovieData.add( Movie("Smurfs", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/1/11/TheSmurfs2011Poster.jpg", "A movie about a blue person."))
-
+        addTestData()
 
         findViewById<ListView>(R.id.list_view).adapter = ListAdapter(main_activity, testMovieData);
 
@@ -78,5 +68,17 @@ class MainActivity : AppCompatActivity() {
         (getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager).apply {
             hideSoftInputFromWindow(editText.windowToken, 0)
         }
+    }
+    private inline fun addTestData(){
+        testMovieData.add(Movie("Avatar", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Avatar-Teaser-Poster.jpg/220px-Avatar-Teaser-Poster.jpg", "A movie about a blue person."))
+        testMovieData.add(Movie("Joker", "Fantasy", "Jack Black", "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg", "A movie about a blue person."))
+        testMovieData.add(Movie("Spiderman", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/f/f9/Spider-Man_Homecoming_poster.jpg", "A movie about a blue person."))
+        testMovieData.add(Movie("Thor", "Fantasy", "Jack Black", "https://images-na.ssl-images-amazon.com/images/I/91P1wWqX63L._SL1500_.jpg", "A movie about a blue person."))
+        testMovieData.add(Movie("Avengers", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg", "A movie about a blue person."))
+        testMovieData.add(Movie("Pokemon", "Fantasy", "Jack Black", "https://m.media-amazon.com/images/M/MV5BN2NkZjA0OWUtZDgyMy00MjIxLWJhZTEtYjdmYzVjZTQ3YWRiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_UY1200_CR85,0,630,1200_AL_.jpg", "A movie about a blue person."))
+        testMovieData.add(Movie("Iron Man", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/0/00/Iron_Man_poster.jpg", "A movie about a blue person."))
+        testMovieData.add(Movie("The Boondock Saints", "Fantasy", "Jack Black", "https://m.media-amazon.com/images/M/MV5BYzVmMTdjOTYtOTJkYS00ZTg2LWExNTgtNzA1N2Y0MDgwYWFhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg", "A movie about a blue person."))
+        testMovieData.add(Movie("Training Day", "Fantasy", "Jack Black", "https://images-na.ssl-images-amazon.com/images/I/91EbJZH9JWL._SL1500_.jpg", "A movie about a blue person."))
+        testMovieData.add( Movie("Smurfs", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/1/11/TheSmurfs2011Poster.jpg", "A movie about a blue person."))
     }
 }
