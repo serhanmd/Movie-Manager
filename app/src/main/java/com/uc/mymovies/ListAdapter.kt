@@ -30,18 +30,18 @@ class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):Ba
             viewHolder = view.tag as ViewHolder
         }
 
-        viewHolder.name?.text = movies[position].title;
-        var imageURL = movies[position].image;
-        Picasso.get().load(imageURL).into(viewHolder.image);
+        viewHolder.name?.text = movies[position].title
+        var imageURL = movies[position].image
+        Picasso.get().load(imageURL).into(viewHolder.image)
 
         //Check if user has movie as favorite, if so set image. (Rows are reused, must reset image).
-        checkIfFavorite(viewHolder, position);
+        checkIfFavorite(viewHolder, position)
 
         //Set click listener. If user favorites change image
         viewHolder.favoriteImage?.setOnClickListener {
-            movies[position].isFavorite = !movies[position].isFavorite;
+            movies[position].isFavorite = !movies[position].isFavorite
 
-            checkIfFavorite(viewHolder, position);
+            checkIfFavorite(viewHolder, position)
         }
 
         return view
@@ -59,7 +59,7 @@ class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):Ba
         return movies.size
     }
 
-    fun checkIfFavorite(viewHolder: ViewHolder, position: Int) {
+    private fun checkIfFavorite(viewHolder: ViewHolder, position: Int) {
         if (movies[position].isFavorite) {
             viewHolder.favoriteImage?.setImageResource(R.drawable.favorite)
         } else {
