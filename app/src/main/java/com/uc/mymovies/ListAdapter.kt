@@ -12,10 +12,10 @@ import com.uc.mymovies.dto.Movie
 
 class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):BaseAdapter() {
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?) : View {
         var view: View? = convertView
         val viewHolder: ViewHolder
-        if (view == null) {
+        if(view == null) {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             view = inflater.inflate(R.layout.list_item, null, true)
             viewHolder = ViewHolder().apply{
@@ -27,12 +27,13 @@ class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):Ba
         } else {
             viewHolder = view.tag as ViewHolder
         }
+
         viewHolder.name?.text = movies[position].title
         var imageURL = movies[position].image
         Picasso.get().load(imageURL).into(viewHolder.image)
 
         //Check if user has movie as favorite, if so set image. (Rows are reused, must reset image).
-        checkIfFavorite(viewHolder, position);
+        checkIfFavorite(viewHolder, position)
 
         //Set click listener. If user favorites change image
         viewHolder.favoriteImage?.setOnClickListener {
@@ -42,7 +43,7 @@ class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):Ba
         return view
     }
 
-    override fun getItem(position: Int): Any {
+    override fun getItem(position: Int) : Any {
         return position
     }
 
