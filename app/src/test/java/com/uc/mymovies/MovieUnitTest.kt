@@ -13,9 +13,13 @@ import org.junit.Assert.*
 class MovieUnitTest {
     @Test
     fun movieDTO() {
-        var movie = Movie("The Matrix", "Action/Adventure", "Who Knows", "image.com", "A movie about people who never get hit by a bullet", false);
-        assertTrue(movie.title.equals("The Matrix"));
-        assertTrue(movie.genre.equals("Action/Adventure"));
+        var movie = Movie("The Matrix", "Action/Adventure", "Who Knows", "image.com", "A movie about people who never get hit by a bullet", false)
+        assertTrue(movie.title == "The Matrix")
+        assertTrue(movie.genre == "Action/Adventure")
+        assertTrue(movie.director == "Who Knows")
+        assertTrue(movie.image == "image.com")
+        assertTrue(movie.synopsis == "A movie about people who never get hit by a bullet")
+        assertTrue(movie.isFavorite.equals("false"))
     }
 
 }
