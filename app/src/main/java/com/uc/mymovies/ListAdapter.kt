@@ -15,35 +15,30 @@ class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):Ba
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view: View? = convertView
         val viewHolder: ViewHolder
-
         if (view == null) {
-            viewHolder = ViewHolder()
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             view = inflater.inflate(R.layout.list_item, null, true)
-
-            viewHolder.name = view.findViewById(R.id.name)
-            viewHolder.image = view.findViewById(R.id.image)
-            viewHolder.favoriteImage = view.findViewById(R.id.favorite)
-
+            viewHolder = ViewHolder().apply{
+                name = view.findViewById(R.id.name)
+                image = view.findViewById(R.id.image)
+                favoriteImage = view.findViewById(R.id.favorite)
+            }
             view!!.tag = viewHolder
         } else {
             viewHolder = view.tag as ViewHolder
         }
-
-        viewHolder.name?.text = movies[position].title;
-        var imageURL = movies[position].image;
-        Picasso.get().load(imageURL).into(viewHolder.image);
+        viewHolder.name?.text = movies[position].title
+        var imageURL = movies[position].image
+        Picasso.get().load(imageURL).into(viewHolder.image)
 
         //Check if user has movie as favorite, if so set image. (Rows are reused, must reset image).
         checkIfFavorite(viewHolder, position);
 
         //Set click listener. If user favorites change image
         viewHolder.favoriteImage?.setOnClickListener {
-            movies[position].isFavorite = !movies[position].isFavorite;
-
-            checkIfFavorite(viewHolder, position);
+            movies[position].isFavorite = !movies[position].isFavorite
+            checkIfFavorite(viewHolder, position)
         }
-
         return view
     }
 

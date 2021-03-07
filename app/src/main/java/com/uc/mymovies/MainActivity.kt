@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings
 import com.uc.mymovies.dto.Movie
 
 class MainActivity : AppCompatActivity() {
-    private var testMovieData: ArrayList<Movie> = ArrayList();
+    private var testMovieData: ArrayList<Movie> = ArrayList()
 
     private lateinit var firestore : FirebaseFirestore
 
@@ -51,11 +51,11 @@ class MainActivity : AppCompatActivity() {
         testMovieData.add(movie9);
         testMovieData.add(movie10);
 
-        findViewById<ListView>(R.id.list_view).adapter = ListAdapter(main_activity, testMovieData);
+        findViewById<ListView>(R.id.list_view).adapter = ListAdapter(main_activity, testMovieData)
 
-        var searchButton = findViewById<ImageButton>(R.id.searchButton);
+        var searchButton = findViewById<ImageButton>(R.id.searchButton)
 
-        var searchFilter = findViewById<EditText>(R.id.searchFilter);
+        var searchFilter = findViewById<EditText>(R.id.searchFilter)
 
         searchFilter.addTextChangedListener(object:TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
