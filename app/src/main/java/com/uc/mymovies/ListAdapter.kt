@@ -15,7 +15,7 @@ class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):Ba
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?) : View {
         var view: View? = convertView
         val viewHolder: ViewHolder
-        if(view == null) {
+        view?.let {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             view = inflater.inflate(R.layout.list_item, null, true)
             viewHolder = ViewHolder().apply{
@@ -24,10 +24,8 @@ class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):Ba
                 favoriteImage = view.findViewById(R.id.favorite)
             }
             view!!.tag = viewHolder
-        } else {
-            viewHolder = view.tag as ViewHolder
-        }
 
+        viewHolder = view.tag as ViewHolder
         viewHolder.name?.text = movies[position].title
         var imageURL = movies[position].image
         Picasso.get().load(imageURL).into(viewHolder.image)
