@@ -18,27 +18,28 @@ class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):Ba
         view?.let {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             view = inflater.inflate(R.layout.list_item, null, true)
-            viewHolder = ViewHolder().apply{
+            viewHolder = ViewHolder().apply {
                 name = view.findViewById(R.id.name)
                 image = view.findViewById(R.id.image)
                 favoriteImage = view.findViewById(R.id.favorite)
             }
             view!!.tag = viewHolder
 
-        viewHolder = view.tag as ViewHolder
-        viewHolder.name?.text = movies[position].title
-        var imageURL = movies[position].image
-        Picasso.get().load(imageURL).into(viewHolder.image)
+            viewHolder = view.tag as ViewHolder
+            viewHolder.name?.text = movies[position].title
+            var imageURL = movies[position].image
+            Picasso.get().load(imageURL).into(viewHolder.image)
 
-        //Check if user has movie as favorite, if so set image. (Rows are reused, must reset image).
-        checkIfFavorite(viewHolder, position)
-
-        //Set click listener. If user favorites change image
-        viewHolder.favoriteImage?.setOnClickListener {
-            movies[position].isFavorite = !movies[position].isFavorite
+            //Check if user has movie as favorite, if so set image. (Rows are reused, must reset image).
             checkIfFavorite(viewHolder, position)
+
+            //Set click listener. If user favorites change image
+            viewHolder.favoriteImage?.setOnClickListener {
+                movies[position].isFavorite = !movies[position].isFavorite
+                checkIfFavorite(viewHolder, position)
+            }
+            return view
         }
-        return view
     }
 
     override fun getItem(position: Int) : Any {
