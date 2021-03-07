@@ -40,16 +40,19 @@ class MainActivity : AppCompatActivity() {
         var movie8: Movie = Movie("The Boondock Saints", "Fantasy", "Jack Black", "https://m.media-amazon.com/images/M/MV5BYzVmMTdjOTYtOTJkYS00ZTg2LWExNTgtNzA1N2Y0MDgwYWFhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg", "A movie about a blue person.");
         var movie9: Movie = Movie("Training Day", "Fantasy", "Jack Black", "https://images-na.ssl-images-amazon.com/images/I/91EbJZH9JWL._SL1500_.jpg", "A movie about a blue person.");
         var movie10: Movie = Movie("Smurfs", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/1/11/TheSmurfs2011Poster.jpg", "A movie about a blue person.");
-        testMovieData.add(movie1);
-        testMovieData.add(movie2);
-        testMovieData.add(movie3);
-        testMovieData.add(movie4);
-        testMovieData.add(movie5);
-        testMovieData.add(movie6);
-        testMovieData.add(movie7);
-        testMovieData.add(movie8);
-        testMovieData.add(movie9);
-        testMovieData.add(movie10);
+        with(testMovieData){
+            add(movie1)
+            add(movie2)
+            add(movie3)
+            add(movie4)
+            add(movie5)
+            add(movie6)
+            add(movie7)
+            add(movie8)
+            add(movie9)
+            add(movie10)
+        }
+
 
         findViewById<ListView>(R.id.list_view).adapter = ListAdapter(main_activity, testMovieData);
 
@@ -77,9 +80,9 @@ class MainActivity : AppCompatActivity() {
                 hideSoftKeyboard(searchFilter);
         }
 
-        searchButton.setOnClickListener({
-            hideSoftKeyboard(searchFilter);
-        });
+        searchButton.setOnClickListener {
+            hideSoftKeyboard(searchFilter)
+        };
     }
 
     fun Activity.hideSoftKeyboard(editText: EditText) {
