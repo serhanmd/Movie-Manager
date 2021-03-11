@@ -1,84 +1,30 @@
 package com.uc.mymovies
 
-import android.app.Activity
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.View
-import android.view.inputmethod.InputMethodManager
-import android.widget.*
+import android.util.Log
 import android.widget.ListAdapter
+import android.widget.ListView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
-import com.uc.mymovies.dto.Movie
+import com.uc.mymovies.service.MovieService
 
 class MainActivity : AppCompatActivity() {
-    private var testMovieData: ArrayList<Movie> = ArrayList()
 
-    private var firestore : FirebaseFirestore
+    var movieService: MovieService = MovieService()
 
     init {
-        firestore = FirebaseFirestore.getInstance()
-        firestore.firestoreSettings = FirebaseFirestoreSettings.Builder().build()
+        fetchMovies()
     }
 
-    var main_activity = this
+    private fun fetchMovies() {
+       var result = movieService.fetchUserMovies("connorkeith")
+        Log.d("TEST-LOG: ", result.toString())
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        addTestData()
-
-        findViewById<ListView>(R.id.list_view).adapter = ListAdapter(main_activity, testMovieData);
-
-        var searchButton = findViewById<ImageButton>(R.id.searchButton);
-
-        var searchFilter = findViewById<EditText>(R.id.searchFilter);
-
-        searchFilter.addTextChangedListener(object:TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
-
-            override fun afterTextChanged(searchTxt: Editable?) {
-                if (searchTxt?.isNotEmpty() == true) {
-                    var treatedSearchTxt = searchTxt.toString().toLowerCase()
-                    var filteredQuery = testMovieData.filter { movie -> movie.title.toLowerCase().contains(treatedSearchTxt) };
-                    findViewById<ListView>(R.id.list_view).adapter = ListAdapter(main_activity,
-                        filteredQuery as ArrayList<Movie>
-                    )
-                }
-            }
-        })
-
-        searchFilter.onFocusChangeListener = View.OnFocusChangeListener { view, hasFocus ->
-            if (!hasFocus)
-                hideSoftKeyboard(searchFilter);
-        }
-
-        searchButton.setOnClickListener({
-            hideSoftKeyboard(searchFilter)
-        })
-    }
-
-    fun Activity.hideSoftKeyboard(editText: EditText) {
-        (getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager).apply {
-            hideSoftInputFromWindow(editText.windowToken, 0)
-        }
-    }
-    private inline fun addTestData(){
-        testMovieData.add(Movie("Avatar", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Avatar-Teaser-Poster.jpg/220px-Avatar-Teaser-Poster.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Joker", "Fantasy", "Jack Black", "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Spiderman", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/f/f9/Spider-Man_Homecoming_poster.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Thor", "Fantasy", "Jack Black", "https://images-na.ssl-images-amazon.com/images/I/91P1wWqX63L._SL1500_.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Avengers", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Pokemon", "Fantasy", "Jack Black", "https://m.media-amazon.com/images/M/MV5BN2NkZjA0OWUtZDgyMy00MjIxLWJhZTEtYjdmYzVjZTQ3YWRiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_UY1200_CR85,0,630,1200_AL_.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Iron Man", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/0/00/Iron_Man_poster.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("The Boondock Saints", "Fantasy", "Jack Black", "https://m.media-amazon.com/images/M/MV5BYzVmMTdjOTYtOTJkYS00ZTg2LWExNTgtNzA1N2Y0MDgwYWFhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg", "A movie about a blue person."))
-        testMovieData.add(Movie("Training Day", "Fantasy", "Jack Black", "https://images-na.ssl-images-amazon.com/images/I/91EbJZH9JWL._SL1500_.jpg", "A movie about a blue person."))
-        testMovieData.add( Movie("Smurfs", "Fantasy", "Jack Black", "https://upload.wikimedia.org/wikipedia/en/1/11/TheSmurfs2011Poster.jpg", "A movie about a blue person."))
+        fetchMovies()
     }
 }
