@@ -2,6 +2,7 @@ package com.uc.mymovies
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ListAdapter
 import android.widget.ListView
 import com.google.firebase.firestore.FirebaseFirestore
@@ -17,14 +18,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fetchMovies() {
-        movieService.fetchUserMovies("connorkeith")
+       var result = movieService.fetchUserMovies("connorkeith")
+        Log.d("TEST-LOG: ", result.toString())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         fetchMovies()
-
     }
 }
