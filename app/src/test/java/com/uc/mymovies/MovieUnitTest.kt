@@ -12,7 +12,7 @@ import org.junit.Assert.*
  */
 class MovieUnitTest {
     @Test
-    fun movieDTO() {
+    fun movieDTO_matainsGenre() {
         var movie = Movie("The Matrix", "Action/Adventure", "Who Knows", "image.com", "A movie about people who never get hit by a bullet", false);
         assertTrue(movie.title.equals("The Matrix"));
         assertTrue(movie.genre.equals("Action/Adventure"));
