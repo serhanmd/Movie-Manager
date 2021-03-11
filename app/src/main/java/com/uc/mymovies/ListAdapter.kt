@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import com.squareup.picasso.Picasso
+//import com.squareup.picasso.Picasso
 import com.uc.mymovies.dto.Movie
 
 class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):BaseAdapter() {
@@ -32,7 +32,7 @@ class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):Ba
 
         viewHolder.name?.text = movies[position].title;
         var imageURL = movies[position].image;
-        Picasso.get().load(imageURL).into(viewHolder.image);
+//        Picasso.get().load(imageURL).into(viewHolder.image);
 
         //Check if user has movie as favorite, if so set image. (Rows are reused, must reset image).
         checkIfFavorite(viewHolder, position);
