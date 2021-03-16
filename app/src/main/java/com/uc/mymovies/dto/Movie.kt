@@ -6,5 +6,7 @@ data class Movie(val title: String,
                  val image: String,
                  val synopsis: String,
                  var isFavorite: Boolean=false) {
-
+  
+  override fun toString(): String {
+        return "$title $genre $director $image $synopsis $isFavorite"
 }

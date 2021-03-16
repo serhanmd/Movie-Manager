@@ -26,12 +26,14 @@
         android:layout_height="35dp"
         android:background="@drawable/searchicon"
         android:scaleType="fitCenter" />
+
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/searchFilter"
+        android:layout_marginTop="1dp"
         android:divider="#171717"
-        android:dividerHeight="2dp"
-        android:layout_below="@id/searchFilter"/>
+        android:dividerHeight="2dp" />
 
 </RelativeLayout>
