@@ -20,6 +20,7 @@ class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val login = findViewById<Button>(R.id.btnLogon)
+        setContentView(R.layout.activity_auth)
         login.setOnClickListener() {
             startActivityForResult(
                     AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(PROVIDERS).build(), AUTH_REQUEST_CODE
@@ -32,6 +33,9 @@ class AuthActivity : AppCompatActivity() {
         if (resultCode == RESULT_OK) {
             if (requestCode == AUTH_REQUEST_CODE) {
                 user = FirebaseAuth.getInstance().currentUser
+                // they have authenticated/created an account, lets take them to the app now
+                val toApp = Intent(this, AuthActivity::class.java)
+                startActivity(toApp)
             }
         }
     }
