@@ -10,7 +10,6 @@ import com.google.firebase.auth.FirebaseUser
 
 class AuthActivity : AppCompatActivity() {
 
-    private val login = findViewById<Button>(R.id.btnLogon)
     private var user : FirebaseUser? = null
     private final val AUTH_REQUEST_CODE = 1337 // we are nerds
     private final val PROVIDERS = arrayListOf(
@@ -21,7 +20,8 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val login = findViewById<Button>(R.id.btnLogon)
         setContentView(R.layout.activity_auth)
-        login.setOnClickListener() {
+        val loginBtn = findViewById<Button>(R.id.btnLogon)
+        loginBtn.setOnClickListener() {
             startActivityForResult(
                     AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(PROVIDERS).build(), AUTH_REQUEST_CODE
             )
