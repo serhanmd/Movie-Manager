@@ -12,9 +12,9 @@ import com.uc.mymovies.dto.Movie
 
 class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):BaseAdapter() {
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?) : View {
-        var view: View? = convertView
-        val viewHolder: ViewHolder
+    override fun getView(position: Int, convertView: View, parent: ViewGroup?) : View {
+        var view: View = convertView
+        var viewHolder: ViewHolder
         view?.let {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             view = inflater.inflate(R.layout.list_item, null, true)
