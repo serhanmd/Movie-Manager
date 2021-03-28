@@ -1,39 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/searchFilter"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:layout_marginRight="40dp"
-        android:hint="Movie Search"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHighlight="#673AB7"
-        android:textColorLink="#673AB7" />
-    <ImageButton
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp"
-        android:id="@+id/searchButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@drawable/searchicon"
-        android:scaleType="fitCenter" />
-
-    <ListView
-        android:id="@+id/list_view"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/searchFilter"
-        android:layout_marginTop="1dp"
-        android:divider="#171717"
-        android:dividerHeight="2dp" />
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
