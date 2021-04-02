@@ -7,10 +7,13 @@ import android.widget.Button
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.uc.mymovies.service.MovieService
+import com.uc.mymovies.service.UserService
 
 class AuthActivity : AppCompatActivity() {
 
     private var firebaseUser : FirebaseUser? = null
+    var userService: UserService = UserService()
     private final val AUTH_REQUEST_CODE = 1337 // we are nerds
     private final val PROVIDERS = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build()
@@ -33,8 +36,9 @@ class AuthActivity : AppCompatActivity() {
         if (resultCode == RESULT_OK) {
             if (requestCode == AUTH_REQUEST_CODE) {
                 firebaseUser = FirebaseAuth.getInstance().currentUser
+               // firebaseUser?.let { userService.createNewUser(it.uid) }
                 // they have authenticated/created an account, lets take them to the app now
-                val toApp = Intent(this, AuthActivity::class.java)
+                val toApp = Intent(this, MainActivity::class.java)
                 startActivity(toApp)
             }
         }

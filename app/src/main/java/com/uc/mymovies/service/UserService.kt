@@ -14,9 +14,9 @@ class UserService {
     }
 
 
-    fun createNewUser(user: User) {
+    fun createNewUser(uid: String) {
         // called when a new user registers with firestore, this adds them to our collection as well
-        firestore?.collection("users").add(user.email)
+        firestore?.collection("users").add(uid)
     }
 
 }
