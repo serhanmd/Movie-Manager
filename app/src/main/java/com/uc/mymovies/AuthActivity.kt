@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseUser
 
 class AuthActivity : AppCompatActivity() {
 
-    private var user : FirebaseUser? = null
+    private var firebaseUser : FirebaseUser? = null
     private final val AUTH_REQUEST_CODE = 1337 // we are nerds
     private final val PROVIDERS = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build()
@@ -32,7 +32,7 @@ class AuthActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK) {
             if (requestCode == AUTH_REQUEST_CODE) {
-                user = FirebaseAuth.getInstance().currentUser
+                firebaseUser = FirebaseAuth.getInstance().currentUser
                 // they have authenticated/created an account, lets take them to the app now
                 val toApp = Intent(this, AuthActivity::class.java)
                 startActivity(toApp)
