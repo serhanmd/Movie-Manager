@@ -1,15 +1,13 @@
 package com.uc.mymovies.service
 
 import androidx.lifecycle.MutableLiveData
-import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
 import com.uc.mymovies.dto.Movie
 
 class MovieService {
 
-//    var firebase = FirebaseInstance.firebaseInstance
-    private lateinit var firestore : FirebaseFirestore
+    private var firestore : FirebaseFirestore
 
     init {
         firestore = FirebaseFirestore.getInstance()

@@ -11,8 +11,8 @@ import com.google.firebase.auth.FirebaseUser
 class AuthActivity : AppCompatActivity() {
 
     private var user : FirebaseUser? = null
-    private final val AUTH_REQUEST_CODE = 1337 // we are nerds
-    private final val PROVIDERS = arrayListOf(
+    private val AUTH_REQUEST_CODE = 1337 // we are nerds
+    private val PROVIDERS = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build()
     )
 
