@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-//import com.squareup.picasso.Picasso
 import com.uc.mymovies.dto.Movie
 
 class ListAdapter(private val context: Context, var movies: ArrayList<Movie>):BaseAdapter() {
