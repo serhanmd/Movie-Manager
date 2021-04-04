@@ -1,5 +1,8 @@
 package com.uc.mymovies.dao
 
+import androidx.room.Dao
+
+@Dao
 interface UserDAO {
 
     fun signIn()
