@@ -1,5 +1,6 @@
 package com.uc.mymovies.service
 
+import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
 import com.uc.mymovies.dto.User
@@ -14,9 +15,12 @@ class UserService {
     }
 
 
-    fun createNewUser(uid: String) {
+    fun createNewUser(user: User) {
         // called when a new user registers with firestore, this adds them to our collection as well
-        firestore?.collection("users").add(uid)
+            firestore?.collection("users").document().set(user).addOnSuccessListener {
+                Log.d("Firebase", "New user saved!")
+            }
+
     }
 
 }

@@ -7,6 +7,7 @@ import android.widget.Button
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.uc.mymovies.dto.User
 import com.uc.mymovies.service.MovieService
 import com.uc.mymovies.service.UserService
 
@@ -36,10 +37,18 @@ class AuthActivity : AppCompatActivity() {
         if (resultCode == RESULT_OK) {
             if (requestCode == AUTH_REQUEST_CODE) {
                 firebaseUser = FirebaseAuth.getInstance().currentUser
-               // firebaseUser?.let { userService.createNewUser(it.uid) }
-                // they have authenticated/created an account, lets take them to the app now
-                val toApp = Intent(this, MainActivity::class.java)
-                startActivity(toApp)
+                val uid = firebaseUser?.uid
+                val email = firebaseUser?.email
+                if (uid != null && email != null) {
+                    val user = User(uid, email)
+                    userService.createNewUser(user)
+
+                    // they have authenticated/created an account, lets take them to the app now
+                    val toApp = Intent(this, MainActivity::class.java)
+                    startActivity(toApp)
+                } else {
+                    // error message stuff
+                }
             }
         }
     }

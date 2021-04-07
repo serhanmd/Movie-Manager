@@ -28,13 +28,13 @@ class MovieService {
         return MutableLiveData()
     }
 
-    fun fetchUpcomingMovies() : MutableLiveData<ArrayList<Movie>> {
-        var movies = MutableLiveData<ArrayList<Movie>>()
-        var request = RetrofitClientInstance.retrofitInstance?.create(MovieDAO::class.java)
-        val call = request?.fetchUpcomingMovies()
-        call?.enqueue(object: Callback<ArrayList<Movie>>) {
-            // TODO: API call for upcoming movies :)
-        }
-    }
+//    fun fetchUpcomingMovies() : MutableLiveData<ArrayList<Movie>> {
+//        var movies = MutableLiveData<ArrayList<Movie>>()
+//        var request = RetrofitClientInstance.retrofitInstance?.create(MovieDAO::class.java)
+//        val call = request?.fetchUpcomingMovies()
+////        call?.enqueue(object: Callback<ArrayList<Movie>>) {
+////            // TODO: API call for upcoming movies :)
+////        }
+//    }
 
 }
