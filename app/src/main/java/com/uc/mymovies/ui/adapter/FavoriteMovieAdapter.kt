@@ -18,14 +18,12 @@ class FavoriteMovieAdapter(
             with(binding) {
                 tvMoviesTitle.text = movie.original_title
                 //todo create MovieAdapter
-
                 rlMovie.setOnClickListener {
                     onClick(movie)
                 }
             }
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteMovieVH {
         val binding = MovieItemBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -34,24 +32,18 @@ class FavoriteMovieAdapter(
         )
         return FavoriteMovieVH(binding)
     }
-
     override fun onBindViewHolder(holder: FavoriteMovieVH, position: Int) {
         holder.bind(getItem(position))
     }
-
     companion object{
         const val IMAGE_DOMAIN = "https://image.tmdb.org/t/p/w500/"
-
         private val DiffUtils = object: DiffUtil.ItemCallback<Movie>() {
             override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
                 return oldItem.id == newItem.id
             }
-
             override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
                 return oldItem == newItem
             }
         }
     }
-
-
 }

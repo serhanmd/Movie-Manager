@@ -6,9 +6,7 @@ import com.uc.mymovies.dto.Movie
 
 @Dao
 interface MovieDAO {
-
     fun getAllMovies() : MutableLiveData<ArrayList<Movie>>
     fun getMovieById() : Movie
     fun getMovieByTitle() : Movie
-
 }
