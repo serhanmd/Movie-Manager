@@ -1,13 +1,13 @@
 package com.uc.mymovies.dto
 
-data class Movie(val title: String,
-                 val genre: String,
-                 val director: String,
-                 val image: String,
-                 val synopsis: String,
+import com.google.gson.annotations.SerializedName
+
+data class Movie(@SerializedName("title") var title: String,
+                 @SerializedName("poster_path") var imagePath: String,
+                 @SerializedName("overview") var overview: String,
                  var isFavorite: Boolean=false) {
 
     override fun toString(): String {
-        return "$title $genre $director $image $synopsis $isFavorite"
+        return "$title  $imagePath $overview $isFavorite"
     }
 }

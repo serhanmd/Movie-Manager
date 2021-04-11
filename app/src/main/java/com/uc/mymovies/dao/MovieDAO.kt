@@ -12,4 +12,10 @@ interface MovieDAO {
     @GET("movie/upcoming?api_key=994b1e7365e576a4a3602cb07f81dbf0&language=en-US&page=1")
     fun fetchUpcomingMovies() : Call<ArrayList<Movie>>
 
+    @GET("https://image.tmdb.org/t/p/w500/")
+    fun getMovieImage(imagePath: String) : String
+
+    @GET("movie/upcoming?api_key=994b1e7365e576a4a3602cb07f81dbf0&language=en-US&page=1")
+    fun getMovie(movieName: String) : Call<ArrayList<Movie>>
+
 }
