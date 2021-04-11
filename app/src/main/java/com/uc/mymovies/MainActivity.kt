@@ -13,17 +13,20 @@ class MainActivity : AppCompatActivity() {
 
     var movieService: MovieService = MovieService()
 
-    init {
-        fetchMovies()
-    }
-
-    private fun fetchMovies() {
-       var result = movieService.fetchUserMovies("connorkeith")
+    private fun fetchMovies(user: String) {
+       var result = movieService.fetchUserMovies(user)
         Log.d("TEST-LOG: ", result.toString())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        var user = intent.getStringExtra("user")
         super.onCreate(savedInstanceState)
+        if (user != null) {
+           var movies = fetchMovies(user)
+            Log.d("Movies grabbed: ", movies.toString())
+        } else {
+            // error message stuff
+        }
         setContentView(R.layout.activity_main)
     }
 }
