@@ -1,5 +1,6 @@
 package com.uc.mymovies.dto
 
+import com.google.gson.annotations.SerializedName
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
@@ -18,3 +19,8 @@ data class Movie(
     @SerializedName("vote_average") val vote_average: Double = 0.0,
     @SerializedName("vote_count") val vote_count: Int = 0
 ): Parcelable
+
+ override fun toString(): String {
+        return "$original_title  $imagePath $overview"
+    }
+

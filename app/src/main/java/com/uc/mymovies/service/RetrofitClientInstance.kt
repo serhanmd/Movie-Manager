@@ -4,9 +4,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClientInstance {
-
+// for reference later https://developers.themoviedb.org/3/movies/get-now-playing
+    private val API_KEY = "994b1e7365e576a4a3602cb07f81dbf0"
     private var retrofit: Retrofit? = null
-    private val BASE_URL = ""
+    private val BASE_URL = "https://api.themoviedb.org/3/"
 
     val retrofitInstance : Retrofit?
         get() {

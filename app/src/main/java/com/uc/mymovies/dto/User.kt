@@ -1,9 +1,11 @@
 package com.uc.mymovies.dto
 
-data class User(val id: Int, val username: String, val password: String, val profileName: String, val email: String ) {
+import androidx.lifecycle.MutableLiveData
+
+data class User(val uid: String, val email: String, val movies: List<Movie> = emptyList() ) {
 
     override fun toString(): String {
-        return "$id $username $password $profileName $email"
+        return "$uid $email"
     }
 
 }
