@@ -64,8 +64,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     annotationProcessor 'androidx.room:room-compiler:2.2.5'
-    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
-    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
     implementation 'com.android.support:multidex:1.0.3'
 
     // firebase
@@ -89,6 +87,15 @@ dependencies {
     kapt 'androidx.hilt:hilt-compiler:1.0.0-beta01'
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
     kapt 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
+
+    // Network
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:4.7.2'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
 
     implementation "androidx.paging:paging-runtime-ktx:3.0.0-beta02"
 
