@@ -1,4 +1,4 @@
-package com.example.movielist.ui.adapter
+package com.uc.mymovies.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.uc.mymovies.databinding.MovieItemBinding
 import com.uc.mymovies.dto.Movie
+import com.uc.mymovies.ui.adapter.MovieAdapter
 
 class FavoriteMovieAdapter(
     val onClick: (Movie) -> Unit
@@ -17,7 +18,7 @@ class FavoriteMovieAdapter(
         fun bind(movie: Movie) {
             with(binding) {
                 tvMoviesTitle.text = movie.original_title
-                //todo create MovieAdapter
+                ivMoviesPoster.load(MovieAdapter.IMAGE_DOMAIN + movie.backdrop_path)
 
                 rlMovie.setOnClickListener {
                     onClick(movie)

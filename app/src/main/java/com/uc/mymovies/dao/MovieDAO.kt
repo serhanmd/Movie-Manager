@@ -1,21 +1,37 @@
 package com.uc.mymovies.dao
 
-import androidx.lifecycle.MutableLiveData
 import androidx.room.Dao
-import com.uc.mymovies.dto.Movie
-import retrofit2.Call
+import com.uc.mymovies.dto.MovieListResponse
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 @Dao
 interface MovieDAO {
 
-    @GET("movie/upcoming?api_key=994b1e7365e576a4a3602cb07f81dbf0&language=en-US&page=1")
-    fun fetchUpcomingMovies() : Call<ArrayList<Movie>>
+    @GET("movie/upcoming")
+    suspend fun getUpcomingMovies(
+            @Query("api_key") apiKey: String,
+            @Query("page") page: Int
+    ) : MovieListResponse
 
-    @GET("https://image.tmdb.org/t/p/w500/")
-    fun getMovieImage(imagePath: String) : String
+    @GET("search/movie")
+    suspend fun searchMovieByQuery(
+            @Query("api_key") apiKey: String,
+            @Query("query") query: String
+    ) : MovieListResponse
 
-    @GET("movie/upcoming?api_key=994b1e7365e576a4a3602cb07f81dbf0&language=en-US&page=1")
-    fun getMovie(movieName: String) : Call<ArrayList<Movie>>
 
+    companion object{
+        private const val BASE_URL = "https://api.themoviedb.org/3/"
+
+        fun create(): MovieDAO {
+            return Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build()
+                    .create(MovieDAO::class.java)
+        }
+    }
 }
