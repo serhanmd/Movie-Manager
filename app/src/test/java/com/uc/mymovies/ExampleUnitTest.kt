@@ -2,8 +2,6 @@ package com.uc.mymovies
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
-import com.uc.mymovies.dto.Movie
-import com.uc.mymovies.service.MovieService
 import org.junit.Test
 
 import org.junit.Assert.*

@@ -2,7 +2,6 @@ package com.uc.mymovies.dto
 
 import com.google.gson.annotations.SerializedName
 import android.os.Parcelable
-import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -20,7 +19,12 @@ data class Movie(
     @SerializedName("vote_count") val vote_count: Int = 0
 ): Parcelable
 
- override fun toString(): String {
-        return "$original_title  $imagePath $overview"
-    }
+class MovieListResponse : ListResponse<Movie>()
+
+open class ListResponse<Item> {
+    @SerializedName("total_pages") val totalPages: Int? = null
+    @SerializedName("total_results") val totalResults: Int? = null
+    @SerializedName("results") val results: List<Item> = emptyList()
+    @SerializedName("page") val page: Int? = null
+}
 
